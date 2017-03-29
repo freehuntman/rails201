@@ -15,7 +15,8 @@
     <tbody>
       <% @posts.each do |post| %>
         <tr>
-          <td> <%= post.content %> </td>
+
+          <td> <%= link_to(post.content, account_post_path(post.group, post)) %> </td>
           <td> <%= post.group.title %> </td>
           <td> <%= post.updated_at %> </td>
           <td> <%= link_to('Edit', edit_group_post_path(post.group, post), class: "btn btn-default btn-xs") %></td>
